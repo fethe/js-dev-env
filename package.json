@@ -1,0 +1,44 @@
+{
+  "name": "js-dev-env",
+  "version": "1.0.0",
+  "description": "Boilerplate para aplicaciones web Node.js",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "1.16.1",
+    "chalk": "1.1.3",
+    "dotenv": "4.0.0",
+    "express": "4.14.1",
+    "morgan": "1.8.1",
+    "open": "0.0.5",
+    "webpack-node-externals": "1.5.4"
+  },
+  "devDependencies": {
+    "babel-cli": "6.22.2",
+    "babel-core": "6.22.1",
+    "babel-loader": "6.2.10",
+    "babel-preset-latest": "6.22.0",
+    "errorhandler": "1.5.0"
+  },
+  "scripts": {
+    "dev": "webpack -d --watch",
+    "build": "webpack -p",
+    "prestart": "npm run security-check",
+    "start": "npm-run-all --parallel up",
+    "up": "nodemon --exec npm run babel-node -- server.js",
+    "babel-node": "babel-node",
+    "security-check": "nsp check",
+    "localtunnel": "lt --port 3000",
+    "share": "npm-run-all --parallel localtunnel",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fethe/js-dev-env.git"
+  },
+  "author": "Federico Antonucci",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fethe/js-dev-env/issues"
+  },
+  "homepage": "https://github.com/fethe/js-dev-env#readme"
+}
